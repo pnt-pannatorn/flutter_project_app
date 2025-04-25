@@ -51,9 +51,6 @@ class _HistoryPageState extends State<HistoryPage> {
 
   @override
   Widget build(BuildContext context) {
-    // DateTime? startDateTime = mergeDateAndTime(startDate, startTime);
-    // DateTime? endDateTime = mergeDateAndTime(endDate, endTime);
-
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.teal,
@@ -218,12 +215,11 @@ class _HistoryPageState extends State<HistoryPage> {
                       return false;
                     }
 
-                    // เช็กช่วงเวลา (เช็กเฉพาะเวลา ไม่สนวันที่)
+                    // เช็กช่วงเวลา
                     if (startTime != null && endTime != null) {
                       TimeOfDay itemTod = TimeOfDay(
                           hour: itemTime.hour, minute: itemTime.minute);
 
-                      // เปลี่ยน startTime, endTime เป็นนาทีเพื่อเทียบง่ายๆ
                       int itemMinutes = itemTod.hour * 60 + itemTod.minute;
                       int startMinutes =
                           startTime!.hour * 60 + startTime!.minute;

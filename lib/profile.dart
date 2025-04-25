@@ -50,18 +50,16 @@ class _ProfilePageState extends State<ProfilePage> {
             child: const Text("ยืนยัน"),
             onPressed: () async {
               if (enteredPassword == userData!['password']) {
-                Navigator.pop(context); // ปิด Dialog ก่อน
+                Navigator.pop(context);
 
-                // รอผลลัพธ์จากหน้า editProfile กลับมา
                 final result =
                     await Navigator.pushNamed(context, '/editProfile');
 
                 if (result == true) {
-                  // ถ้าแก้ไขสำเร็จ โหลดข้อมูลใหม่เลย
                   await _loadUserData();
                 }
               } else {
-                Navigator.pop(context); // ปิด Dialog
+                Navigator.pop(context);
                 ScaffoldMessenger.of(context).showSnackBar(
                   const SnackBar(content: Text("รหัสผ่านไม่ถูกต้อง")),
                 );
@@ -84,8 +82,7 @@ class _ProfilePageState extends State<ProfilePage> {
       context: context,
       builder: (context) => AlertDialog(
         title: const Text("confirm delete"),
-        content: const Text(
-            "Are you sure you want to delete this account? This action cannot be undone."),
+        content: const Text("Are you sure you want to delete this account?"),
         actions: [
           TextButton(
             child: const Text("cancel"),

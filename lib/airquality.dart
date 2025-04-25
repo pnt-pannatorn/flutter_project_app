@@ -67,7 +67,7 @@ class _AirQualityPageState extends State<AirQualityPage> {
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
               return const Center(
-                  child: CircularProgressIndicator()); // แสดง loader อันเดียว
+                  child: CircularProgressIndicator()); 
             } else if (snapshot.hasError || !snapshot.hasData) {
               return const Center(child: Text("เกิดข้อผิดพลาดในการโหลดข้อมูล"));
             }

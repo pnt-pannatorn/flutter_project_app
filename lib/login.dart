@@ -22,7 +22,6 @@ class _LoginPageState extends State<LoginPage> {
   Future<void> login() async {
     final url =
         Uri.parse("https://api-project-csc452-uxaa.vercel.app/users/login");
-    // final String url = dotenv.env['API_URL']! + "/users/login";
 
     setState(() {
       isLoading = true;
@@ -37,7 +36,6 @@ class _LoginPageState extends State<LoginPage> {
 
       if (response.statusCode == 200) {
         final data = jsonDecode(response.body);
-        // นำ user ไปเก็บไว้หรือส่งต่อไปหน้า MenuTab
         final prefs = await SharedPreferences.getInstance();
         await prefs.setString('user', jsonEncode(data['user']));
         Navigator.pushReplacementNamed(context, "/menuTab",

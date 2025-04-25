@@ -6,15 +6,12 @@ import 'package:flutter_project_app/editProfile.dart';
 import 'package:flutter_project_app/resetpassword.dart';
 
 Future<void> main() async {
-  // WidgetsFlutterBinding.ensureInitialized(); // Ensure binding is initialized
-  // await dotenv.load(fileName: ".env"); // Load environment variables
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -23,7 +20,7 @@ class MyApp extends StatelessWidget {
             appBarTheme: const AppBarTheme(
                 backgroundColor: Colors.blueAccent,
                 foregroundColor: Colors.white)),
-        home: const SplashScreen(), // เปลี่ยนเป็น SplashScreen()
+        home: const SplashScreen(), 
         routes: {
           '/login': (context) => const LoginPage(),
           '/menuTab': (context) => const TabMenu(),

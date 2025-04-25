@@ -26,18 +26,6 @@ class _SplashScreenState extends State<SplashScreen> {
     });
   }
 
-  // Future<void> checkLoginStatus() async {
-  //   final prefs = await SharedPreferences.getInstance();
-  //   final user = prefs.getString('user');
-  //   // await Future.delayed(const Duration(seconds: 3));
-  //   if (user != null && user.isNotEmpty) {
-  //     Navigator.pushNamedAndRemoveUntil(context, '/menuTab', (route) => false);
-  //   } else {
-  //     Navigator.pushNamedAndRemoveUntil(context, '/login' , (route) => false);
-  //   }
-
-  // }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
